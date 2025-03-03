@@ -36,5 +36,11 @@ Route::get('/appointments', function () {
 // Ruta para manejar el envío del formulario de citas
 Route::post('/appointments', [AppointmentController::class, 'store'])->name('appointments.store');
 
+// Ruta para mostrar "Mis Turnos"
+Route::get('/mis-turnos', [AppointmentController::class, 'myAppointments'])->name('appointments.my');
+
+// Ruta para buscar turnos de invitados
+Route::post('/mis-turnos/buscar', [AppointmentController::class, 'searchAppointments'])->name('appointments.search');
+
 // Rutas de autenticación
 require __DIR__.'/auth.php';

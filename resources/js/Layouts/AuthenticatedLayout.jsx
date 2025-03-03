@@ -30,6 +30,13 @@ export default function AuthenticatedLayout({ header, children }) {
                                 >
                                     Agendar Turno
                                 </NavLink>
+
+                                <NavLink
+                                    href={route('appointments.my')}
+                                    active={route().current('appointments.my')}
+                                >
+                                    Mis Turnos
+                                </NavLink>
                             </div>
                         </div>
 
@@ -42,7 +49,7 @@ export default function AuthenticatedLayout({ header, children }) {
                                                 type="button"
                                                 className="inline-flex items-center rounded-md border border-transparent bg-custom-light-purple px-3 py-2 text-sm font-medium leading-4 text-custom-pink transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none"
                                             >
-                                {user ? user.name : 'Invitado'}
+                                                {user ? user.name : 'Invitado'}
 
                                                 <svg
                                                     className="-me-0.5 ms-2 h-4 w-4"
@@ -139,10 +146,10 @@ export default function AuthenticatedLayout({ header, children }) {
                     <div className="border-t border-gray-200 pb-1 pt-4">
                         <div className="px-4">
                             <div className="text-base font-medium text-custom-dark-pink">
-                            {user ? user.name : 'Invitado'}
+                                {user ? user.name : 'Invitado'}
                             </div>
                             <div className="text-sm font-medium text-custom-pink">
-                            {user ? user.email : 'Invitado'}
+                                {user ? user.email : 'Invitado'}
                             </div>
                         </div>
 
